@@ -1,6 +1,6 @@
 # Modern Auth UI
 
-A clean, responsive, and modern authentication user interface featuring Login and Signup pages. Built with HTML5 and CSS3, this project focuses on a sleek user experience with smooth micro-interactions and animations.
+A responsive, and modern authentication user interface featuring Login and Signup pages. Built with HTML5 and CSS3, this project focuses on a sleek user experience with smooth micro-interactions and animations.
 
 ## 🚀 Features
 
@@ -11,7 +11,7 @@ A clean, responsive, and modern authentication user interface featuring Login an
   * Buttons lift and cast a soft shadow when hovered.
   * Input fields feature a gentle glow effect when focused.
   * Animated sliding underlines for navigation links.
-**Clean Codebase:** Utilizes modern CSS practices, including global box-sizing, flexbox for layout, and consolidated media queries.
+
 
 ## 📁 File Structure
 
