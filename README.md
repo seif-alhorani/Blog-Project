@@ -12,16 +12,3 @@ A responsive, and modern authentication user interface featuring Login and Signu
   * Input fields feature a gentle glow effect when focused.
   * Animated sliding underlines for navigation links.
 
-
-## 📁 File Structure
-
-text
-auth-ui/
-│
-├── assets/
-│   └── images/
-│       └── Logo.jpg  # Project Logo
-│
-├── login.html      # Login page template
-├── signup.html     # Signup page template
-└── style.css       # Main stylesheet containing layout and animations
