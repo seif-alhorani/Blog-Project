@@ -1,4 +1,3 @@
-
 var inputElement = document.getElementById("profile-upload");
 var pic = document.querySelector(".upload-label img");
 
@@ -16,3 +15,5 @@ inputElement.onchange = function(event) {
         pic.src = imgUrl; 
     }
 }
+
+
