@@ -39,7 +39,9 @@ nav ul li a {
   font-size: 16px;
   transition: all 0.3s ease;
 }
-
+nav ul li a img{
+    border-radius: 50%;
+}
 nav ul li a:hover {
   color: snow;
   background-color: #000000;

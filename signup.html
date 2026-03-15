@@ -24,7 +24,7 @@
     <div class="container">
         <div class="form-card">
             <h3>Signup</h3>
-            <form>
+            <form onsubmit="return validateSignupForm()">
                 <div class="mb-3">
                     <label for="fullname">Full Name</label>
                     <input type="text" class="form-control" id="fullname" placeholder="Full Name" required>
@@ -56,6 +56,7 @@
     <footer>
         <span> © 2026 Blog Platform</span>
     </footer>
+    <script src="/script/scriptvalidation.js"></script>
 </body>
 
 </html>

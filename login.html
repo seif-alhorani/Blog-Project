@@ -23,7 +23,7 @@
     <div class="container">
         <div class="form-card">
             <h3>Login</h3>
-            <form>
+            <form onsubmit="return validateLoginForm()">
                 <div>
                     <label for="email">Email address</label>
                     <input type="email" id="email" aria-describedby="emailHelp" placeholder="name@example.com" required>
@@ -33,7 +33,7 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" placeholder="****" required>
                 </div>
-                <button type="submit" onclick="location.href='Profile.html'">Login</button>
+                <button type="submit" >Login</button>
                 <div class="form-link">
                     <a href="#">Forgot password?</a>
                     <a href="signup.html">Signup</a>
@@ -47,6 +47,7 @@
     <footer>
         <span> © 2026 Blog Platform</span>
     </footer>
+    <script src="/script/scriptvalidation.js"></script>
 </body>
 
 </html>
