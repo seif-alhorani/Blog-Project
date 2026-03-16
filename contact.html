@@ -14,7 +14,7 @@
     <script type="text/javascript">
         (function () {
             emailjs.init({
-                publicKey: "YourKey",
+                publicKey: "3ziIY9u02e9LRrJ5o",
             });
         })();
     </script>
@@ -69,8 +69,9 @@
                         </div>
                     </div>
                     <div class="info-item">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3384.034267075755!2d35.893730076112504!3d31.987086523934526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDU5JzEzLjUiTiAzNcKwNTMnNDYuNyJF!5e0!3m2!1sen!2sjo!4v1773577002104!5m2!1sen!2sjo" width="600" height="350px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3384.034267075755!2d35.893730076112504!3d31.987086523934526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDU5JzEzLjUiTiAzNcKwNTMnNDYuNyJF!5e0!3m2!1sen!2sjo!4v1773577002104!5m2!1sen!2sjo" width="600" height="350px" style="border:solid 5px; margin-top: 10px; border-radius: 15px; width: 100%;box-shadow: 10px 10px rgb(37, 52, 57);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+            
                 </div>
 
                 <div class="contact-form">
@@ -78,21 +79,25 @@
                     <form id ="formId" action="#" onsubmit="handleContactSubmit(event)">
                         <div class="input-group">
                             <label for="fullname">Full Name</label>
-                            <input type="text" id="fullname" placeholder="Name" required>
+                            <input type="text" id="fullname" placeholder="Name"  >
+                            <span id="nameError" class="error-message"></span>
                         </div>
                         <div class="input-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="email@mail.com" required>
+                            <input type="email" id="email" placeholder="email@mail.com"  >
+                            <span id="emailError" class="error-message"></span>
                         </div>
                         <div class="input-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" placeholder="How can we help?" required>
+                            <input type="text" id="subject" placeholder="How can we help?"  >
+                            <span id="subjectError" class="error-message"></span>
                         </div>
                         <div class="input-group">
                             <label for="message">Message</label>
-                            <textarea id="message" placeholder="Your message here..." required></textarea>
+                            <textarea id="message" placeholder="Your message here..." ></textarea>
+                            <span id="messageError" class="error-message"></span>
                         </div>
-                        <button type="submit" class="submit-btn" onclick="sendMail()">
+                        <button type="submit" class="submit-btn">
                             Send Message
                             <span class="material-symbols-outlined" >send</span>
                         </button>

@@ -10,6 +10,7 @@ function validateLoginForm() {
         alert("Password must be filled out");
         return false;
     }
+    return true;
 }
 function validateSignupForm() {
     let name = document.getElementById("fullname").value;
@@ -17,26 +18,33 @@ function validateSignupForm() {
     let password = document.getElementById("password").value;
     let cpassword = document.getElementById("cpassword").value;
 
-    if (name == "") {
-        alert("Full Name must be filled out");
+    document.getElementById("nameError").innerHTML = "";
+    document.getElementById("emailError").innerHTML = "";
+    document.getElementById("passwordError").innerHTML = "";
+    document.getElementById("cpasswordError").innerHTML = "";
+    document.getElementById("notequalpasswordcpssword").innerHTML = "";
+
+    if (name.trim == "") {
+        document.getElementById("nameError").innerHTML = "Full Name is required";
         return false;
     }
     if (email == "") {
-        alert("Email must be filled out");
+        document.getElementById("emailError").innerHTML = "Email is required";
         return false;
     }
     if (password == "") {
-        alert("Password must be filled out");
+        document.getElementById("passwordError").innerHTML = "Password is required";
         return false;
     }
     if (cpassword == "") {
-        alert("Confirm passowrd must be filled out");
+        document.getElementById("cpasswordError").innerHTML = "Confirm is required";
         return false;
     }
-    if(cpassword != password){
-         alert("Confirm passowrd not the same as password");
+    if (cpassword != password) {
+        document.getElementById("notequalpasswordcpssword").innerHTML = "Confirm Password And the Orginal Password dosent match ";
         return false;
     }
+    return true;
 }
 
 function validateContactForm() {
@@ -45,20 +53,26 @@ function validateContactForm() {
     let subject = document.getElementById("subject").value;
     let message = document.getElementById("message").value;
 
-    if (name == "") {
-        alert("Full Name must be filled out");
+    document.getElementById("nameError").innerHTML = "";
+    document.getElementById("emailError").innerHTML = "";
+    document.getElementById("subjectError").innerHTML = "";
+    document.getElementById("messageError").innerHTML = "";
+
+    if (name.trim() == "") {
+        document.getElementById("nameError").innerHTML = "Full Name is required";
         return false;
     }
-    if (email == "") {
-        alert("Email must be filled out");
+    if (email.trim() == "") {
+        document.getElementById("nameError").innerHTML = "Email is required";
         return false;
     }
-    if (subject == "") {
-        alert("Subject must be filled out");
+    if (subject.trim() == "") {
+        document.getElementById("nameError").innerHTML = "Subject is required";
         return false;
     }
-      if (message == "") {
-        alert("Message must be filled out");
+    if (message.trim() == "") {
+        document.getElementById("nameError").innerHTML = "Message is required";
         return false;
     }
+    return true;
 }
