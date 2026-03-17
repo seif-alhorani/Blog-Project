@@ -63,15 +63,15 @@ function validateContactForm() {
         return false;
     }
     if (email.trim() == "") {
-        document.getElementById("nameError").innerHTML = "Email is required";
+        document.getElementById("emailError").innerHTML = "Email is required";
         return false;
     }
     if (subject.trim() == "") {
-        document.getElementById("nameError").innerHTML = "Subject is required";
+        document.getElementById("subjectError").innerHTML = "Subject is required";
         return false;
     }
     if (message.trim() == "") {
-        document.getElementById("nameError").innerHTML = "Message is required";
+        document.getElementById("messageError").innerHTML = "Message is required";
         return false;
     }
     return true;
