@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentBlog = blogs.find(blog => blog.title === blogTitle);
 
     if (!currentBlog) {
-        blogContentContainer.innerHTML = ` <h2 style="color: var(--text-error); grid-column: 1/-1; text-align: center;">Cant Find That Blog or Its not created</h2>`
+        blogContentContainer.innerHTML = ` <h2 class="animate__animated animate__headShake "style="color: var(--text-error); grid-column: 1/-1; text-align: center;">Cant Find That Blog or Its not created</h2>`
     }
 
     blogContentContainer.innerHTML = `
