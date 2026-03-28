@@ -7,17 +7,18 @@ document.getElementById('blogForm').addEventListener('submit', function (e) {
     let imageUrl = document.getElementById('imageUrl').value;
     let imageFile = document.getElementById('imageFile').files[0];
 
-    //add select of some choose this disable the others 
+    
+  
 
     if (imageUrl) {
         saveblog(imageUrl);
-      
+
     } else if (imageFile) {
         const reader = new FileReader();
         reader.onload = function (e) {
             const base64String = e.target.result;
             saveblog(base64String);
-            
+
         };
         reader.onerror = function () {
             console.error('Failed to read file');
@@ -26,7 +27,7 @@ document.getElementById('blogForm').addEventListener('submit', function (e) {
         };
         reader.readAsDataURL(imageFile);
 
-    }else{
+    } else {
         saveBlog('');
     }
 
@@ -41,7 +42,7 @@ document.getElementById('blogForm').addEventListener('submit', function (e) {
         let blogs;
         let getblogs = localStorage.getItem("blogs");
         console.log("Get");
-    
+
         if (getblogs) {
             blogs = JSON.parse(getblogs);
             console.log("Parse");
@@ -49,7 +50,7 @@ document.getElementById('blogForm').addEventListener('submit', function (e) {
             blogs = [];
         }
         blogs.push(blog);
-    
+
         localStorage.setItem("blogs", JSON.stringify(blogs));
         document.getElementById("blogForm").reset();
         console.log("Success");

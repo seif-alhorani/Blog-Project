@@ -14,12 +14,12 @@
     <nav>
         <ul>
             <li>
-                <img class="logo" src="./assets/images/logo.jpg" alt="Logo" onclick="localStorage.clear()">
+                <img class="logo" src="./assets/images/logo.jpg" alt="Logo" >
             </li>
             <li><a href="home.html">Home</a></li>
             <li><a href="create.html">Create Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><button onclick="location.href='login.html'">Logout</button></li>
+            <li><button onclick="location.href='login.html'" onclick="localStorage.clear()">Logout</button></li>
             <li><a href="profile.html"><img class="profile-pic" src="./assets/images/User.png" alt="profile-pic"></a>
             </li>
         </ul>
@@ -27,19 +27,40 @@
     <main>
         <section class="hero-section">
             <div class="hero-content">
-                <h1>Title</h1>
-                <p>Subtitle</p>
-                <button>call to action</button>
+                <h1>Explore. Create. Share.</h1>
+                <p>Your ultimate destination for inspiring stories and expert insights.</p>
+                <button onclick="location.href='contact.html'">Get In Touch</button>
             </div>
         </section>
+
         <section class="about-section">
             <div class="about-content">
-                <h1>About Us</h1>
+                <h1>About Our Platform</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, recusandae. Error neque excepturi
-                    quae quis quam iusto sed fugit fugiat est veritatis. Cum, natus animi minima voluptates error porro
-                    consectetur!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem perferendis consequatur maiores tenetur quia dolores sit aperiam laudantium perspiciatis veritatis? Quibusdam, totam reiciendis. Officia, eveniet quas? Sequi tempora quisquam ipsa!
                 </p>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <h1 style="text-align: center; color: var(--text-main-light); margin-bottom: 30px;">Explore Categories</h1>
+            <div class="categories-container">
+                <div class="category-box" >
+                    <span class="material-symbols-outlined">devices</span>
+                    <h3>Technology</h3>
+                </div>
+                <div class="category-box" >
+                    <span class="material-symbols-outlined">favorite</span>
+                    <h3>Lifestyle</h3>
+                </div>
+                <div class="category-box" >
+                    <span class="material-symbols-outlined">explore</span>
+                    <h3>Travel</h3>
+                </div>
+                <div class="category-box" >
+                    <span class="material-symbols-outlined">restaurant</span>
+                    <h3>Food</h3>
+                </div>
             </div>
         </section>
         <section class="additional-section">
@@ -52,7 +73,7 @@
                 All</button>
         </div>
         <section class="blog-section" id="blog-container">
-            
+
         </section>
     </main>
     <footer>
