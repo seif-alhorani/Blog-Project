@@ -1,40 +1,51 @@
+let imageUrl = document.getElementById('imageUrl');
+let imageFile = document.getElementById('imageFile');
+const removeBtn = document.getElementById('removeFileBtn');
+
+
+imageUrl.addEventListener("input", function () {
+    if (this.value.trim() !== "") {
+        imageFile.disabled = true;
+    } else {
+
+        imageFile.disabled = false;
+    }
+});
+
+imageFile.addEventListener("change", function () {
+    if (this.files && this.files.length > 0) {
+        imageUrl.disabled = true;
+        removeBtn.style.display = "block";
+    } else {
+        imageUrl.disabled = false;
+        removeBtn.style.display = "none";
+    }
+});
+removeBtn.addEventListener("click", function() {
+    imageFile.value = ""; 
+    this.style.display = "none";
+    imageUrl.disabled = false; 
+    console.log("File removed");
+});
+
 document.getElementById('blogForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
     let title = document.getElementById('title').value;
     let category = document.getElementById('category').value;
     let content = document.getElementById('content').value;
-    let imageUrl = document.getElementById('imageUrl').value;
-    let imageFile = document.getElementById('imageFile').files[0];
 
-    
-  
 
-    if (imageUrl) {
-        saveblog(imageUrl);
-        imageUrl.addEventListener("input",function(){
-            imageFile.disabled=true;
-        })
-    } else if (imageFile) {
-        imageFile.addEventListener("onchange",function(){
-            imageUrl.disabled=true;
-            
-        })
+    if (imageUrl.value) {
+        saveblog(imageUrl.value);
+    } else if (imageFile.files[0]) {
         const reader = new FileReader();
         reader.onload = function (e) {
-            const base64String = e.target.result;
-            saveblog(base64String);
-
+            saveblog(e.target.result);
         };
-        reader.onerror = function () {
-            console.error('Failed to read file');
-            // fallback: save without image or notify user
-            saveBlog('');
-        };
-        reader.readAsDataURL(imageFile);
-
+        reader.readAsDataURL(imageFile.files[0]);
     } else {
-        saveBlog('');
+        saveblog('');
     }
 
     function saveblog(finalImage) {
@@ -43,24 +54,18 @@ document.getElementById('blogForm').addEventListener('submit', function (e) {
             image: finalImage,
             category: category,
             content: content,
-            createdAt: new Date().toLocaleString()// to save date and Time 
+            createdAt: new Date().toLocaleString()
         };
-        let blogs;
-        let getblogs = localStorage.getItem("blogs");
-        console.log("Get");
 
-        if (getblogs) {
-            blogs = JSON.parse(getblogs);
-            console.log("Parse");
-        } else {
-            blogs = [];
-        }
+        let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
         blogs.push(blog);
-
         localStorage.setItem("blogs", JSON.stringify(blogs));
+
+
         document.getElementById("blogForm").reset();
-        console.log("Success");
+        imageUrl.disabled = false;
+        imageFile.disabled = false;
+
+        alert("Success!");
     }
-
-
 });

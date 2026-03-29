@@ -11,7 +11,7 @@
 </head>
 
 <body>
-     <nav>
+    <nav>
         <ul>
             <li>
                 <img class="logo" src="./assets/images/logo.jpg" alt="Logo">
@@ -41,8 +41,16 @@
                     <div class="input-group">
                         <label>Blog Image</label>
                         <input type="url" id="imageUrl" placeholder="Paste image URL here">
+
                         <p style="text-align: center; margin: 10px 0; color: var(--text-muted-dark);">OR</p>
-                        <input type="file" id="imageFile" accept="image/*">
+
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <input type="file" id="imageFile" accept="image/*" style="flex: 1;">
+                            <button type="button" id="removeFileBtn"
+                                style="display: none; width: auto; background-color: var(--text-error); padding: 8px 12px; margin: 0;">
+                                Remove
+                            </button>
+                        </div>
                     </div>
 
                     <div class="input-group">

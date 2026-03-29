@@ -45,6 +45,22 @@
     resize: vertical;
 }
 
+input:disabled {
+    background-color: #e0e0e0; 
+    opacity: 0.6;            
+    cursor: not-allowed;       
+    border-color: #ccc
+}
+
+#removeFileBtn {
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+#removeFileBtn:hover {
+    background-color: #cc0000; 
+}
 .publish-btn {
     background-color: var(--color-primary);
     color: hsl(0, 0%, 100%);
