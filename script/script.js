@@ -1,19 +1,35 @@
 var inputElement = document.getElementById("profile-upload");
 var profilePic = document.querySelector(".upload-label img");
-var navPic = document.querySelector(".profile-pic");        
-
+var navPic = document.querySelector(".profile-pic");
+var blogCountElement = document.getElementById("blog-count");
 
 function updateUIWithImage(imageData) {
     if (profilePic) profilePic.src = imageData;
     if (navPic) navPic.src = imageData;
 }
 
+function updateBlogStats() {
+    const storedBlogs = localStorage.getItem("blogs");
+    let blogs = storedBlogs ? JSON.parse(storedBlogs) : [];
 
-document.addEventListener("DOMContentLoaded", function() {
+    let counter = 0;
+    blogs.forEach(function (item) {
+        counter++;
+    });
+
+
+    if (blogCountElement) {
+        blogCountElement.innerText = counter;
+    }
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
     var savedImage = localStorage.getItem("userProfileImage");
     if (savedImage) {
         updateUIWithImage(savedImage);
     }
+    updateBlogStats();
 });
 
 

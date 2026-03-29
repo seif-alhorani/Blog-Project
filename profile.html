@@ -21,7 +21,7 @@
             <li><a href="home.html">Home</a></li>
             <li><a href="create.html">Create Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><button onclick="location.href='login.html'" onclick="localStorage.clear()">Logout</button></li>
+            <li><button onclick="localStorage.clear(); location.href = 'login.html';">Logout</button></li>
             <li><a href="profile.html"><img class="profile-pic" src="./assets/images/User.png" alt="profile-pic"></a>
             </li>
         </ul>
@@ -73,7 +73,7 @@
 
                     <div class="stat-item">
                         <span class="stat-label">Blogs published</span>
-                        <span class="stat-value">12</span>
+                        <span class="stat-value" id="blog-count">0</span>
                     </div>
 
                     <div class="stat-item top-blogs">
