@@ -18,6 +18,7 @@ document.getElementById('blogForm').addEventListener('submit', function (e) {
     } else if (imageFile) {
         imageFile.addEventListener("onchange",function(){
             imageUrl.disabled=true;
+            
         })
         const reader = new FileReader();
         reader.onload = function (e) {
