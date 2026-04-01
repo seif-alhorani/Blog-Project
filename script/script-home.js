@@ -20,17 +20,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     const storedBlogs = localStorage.getItem("blogs");
     let blogs = storedBlogs ? JSON.parse(storedBlogs) : [];
 
-    let apiblog=await getData();
+    // let apiblog=await getData();
 
-    let apiblogmap =apiblog.map(data=>({
-        title:data.title,
-        image:data.urlToImage,
-        category:"News",    
-        content:data.content,
-        createdAt:JSON.stringify(data.publishedAt)
-    }));
+    // let apiblogmap =apiblog.map(data=>({
+    //     title:data.title,
+    //     image:data.urlToImage,
+    //     category:"News",    
+    //     content:data.content,
+    //     createdAt:JSON.stringify(data.publishedAt)
+    // }));
      
-    let allblogs = [...apiblogmap];
+   // let allblogs = [...apiblogmap];
+    let allblogs = [...blogs];
     if (allblogs.length === 0) {
         blog_container.innerHTML = `<h2 style="text-align: center; color: var(--text-muted-light);"> No blogs are avilable here be the first to create one </h2>`
     }else{
