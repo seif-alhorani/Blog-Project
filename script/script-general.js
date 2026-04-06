@@ -14,14 +14,15 @@ function Year() {
 }
 
 async function checkEmail() {
-    let emaillist = localStorage.getItem("emails");
-    console.log(emaillist);
+   
+    let currentUser = localStorage.getItem("loggedInUser"); 
 
     let location = getpagename();
-    console.log(location);
-    if (location === "create.html" || location === "blogs.html" || location === "single-blog.html" || location === "dashboard.html"){
-        if(!emaillist) {
-            Swal.fire({
+    
+   
+    if (location === "create.html" || location === "blogs.html" || location === "single-blog.html" || location === "profile.html") {
+        if (!currentUser) {
+             Swal.fire({
                 title: "Error",
                 text: "Need an Account ",
                 icon: "error",
@@ -30,26 +31,30 @@ async function checkEmail() {
             });
             await sleep(1800);
             window.location.href = "login.html";
-
         }   
     }
-    if (!emaillist && location === "profile.html") {
-        window.location.href = "login.html";
-    }
-    if(emaillist && location !=="profile.html"){
-        const checkstored= localStorage.getItem("userProfileImage");
-        const Userimgpath = "./assets/images/User.png"
-        let userProfileImage= checkstored ? checkstored : Userimgpath ;
-        document.getElementById("logoutbt").innerHTML=`<button onclick="localStorage.removeItem('emails'); location.href='login.html';">Logout</button>`;
-        document.getElementById("profpic").innerHTML=`<a href="profile.html"><img class="profile-pic" src="${userProfileImage}" alt="profile-pic"></a>`;
-    }
-    if(emaillist && (location === "login.html" || location === "signup.html"))
-         window.location.href = "home.html";
-    if(emaillist){
-        document.getElementById("loginbt").style.display ="none";
-       
-    }
 
+    
+    if (currentUser && location !== "profile.html") {
+        const checkstored = localStorage.getItem("userProfileImage");
+        const Userimgpath = "./assets/images/User.png";
+        let userProfileImage = checkstored ? checkstored : Userimgpath;
+
+       
+        document.getElementById("logoutbt").innerHTML = `
+            <button onclick="localStorage.removeItem('loggedInUser'); location.href='login.html';">
+                Logout
+            </button>`;
+        
+        document.getElementById("profpic").innerHTML = `
+            <a href="profile.html">
+                <img class="profile-pic" src="${userProfileImage}" alt="profile-pic">
+            </a>`;
+            
+        if (document.getElementById("loginbt")) {
+            document.getElementById("loginbt").style.display = "none";
+        }
+    }
 }
 
 function getpagename() {
@@ -61,5 +66,6 @@ function getpagename() {
 function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
 
 

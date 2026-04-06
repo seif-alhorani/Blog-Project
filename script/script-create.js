@@ -95,9 +95,10 @@ document.getElementById('blogForm').addEventListener('submit', function (e) {
             title: "Success",
             text: editTitle ? "Updated Successfully" : "Created Successfully",
             icon: "success",
-            confirmButtonColor: "#000000"
+            confirmButtonColor: "#000000",
+            theme:"dark"
         }).then(() => {
-            window.location.href = 'dashboard.html'; // Redirect to Dashboard [cite: 33]
+            window.location.href = 'dashboard.html'; // Redirect to Dashboard
         });
     }
 });
