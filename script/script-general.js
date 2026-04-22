@@ -4,13 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
     Year();
     checkEmail();
     getpagename();
+   
 });
 
 function Year() {
     const d = new Date();
     let year = d.getFullYear();
     document.getElementById("copyright").innerHTML = `<span id="dates"> © ${year} Blog Platform</span>`;
-   
+   document.addEventListener('contextmenu', event => event.preventDefault());
 }
 
 async function checkEmail() {
